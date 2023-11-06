@@ -1,12 +1,12 @@
 import React from 'react';
 import './menystyles.scss';
-import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// 
 
 
-
-const  MenuItem=({title,imageUrl,size,linkUrl,match,history}) => {
+const  MenuItem=({title,imageUrl,size,linkUrl,match}) => {
   return (
-      <div className={`${size} menu-item`} style={{backgroundImage:`url(${imageUrl})`}} onClick={()=>history.push(`${match.url}${linkUrl}`)}>
+      <div className={`${size} menu-item`} style={{backgroundImage:`url(${imageUrl})`}} onClick={()=>Link(`${match.url}${linkUrl}`)}>
                 
       <div className='content'>
               <h1 className='title'>{title.toUpperCase()}</h1>
@@ -18,6 +18,6 @@ const  MenuItem=({title,imageUrl,size,linkUrl,match,history}) => {
   )
 }
 
-export default (MenuItem);
+export default MenuItem;
 
 
