@@ -3,6 +3,8 @@ import Forminput from "../FormInput/Forminput";
 import "./sign.scss";
 import CustomButton from "./CustomButton";
 
+import { signInWithGoogle } from "../../firbaseutils";
+
 export default class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -50,6 +52,7 @@ export default class SignIn extends Component {
           />
 
           <CustomButton type="submit">Sign In </CustomButton>
+          <CustomButton onClick={signInWithGoogle}> {' '} Sign in with Google {' '} </CustomButton>
         </form>
       </div>
     );
